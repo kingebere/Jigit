@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Instant Apply</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./style/app.css" /> -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="icon.png" /> 
+    <script src="./popup.js" type="module"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body style="width: 900px;height: 900px;">
+    <button  id="startStopButton">Start Recording</button>
+        <!-- Button to pause/resume recording -->
+        <button id="pauseResumeButton" style="display: none;">Pause Recording</button>
+    
+        <!-- Button to end recording -->
+        <button id="endButton" style="display: none;">End Recording</button>
+        
+        <!-- Button to download the recorded video -->
+        <a id="downloadLink" style="display: none;" download="recorded-video.mp4">
+            <button id="downloadButton">Download Video</button>
+        </a>
+        
+        <!-- Video element for displaying the webcam feed -->
+        <video id="webcamVideo" autoplay playsinline style="display: none;"></video>
+        <video id="screenVideo" autoplay playsinline style="display: none;"></video>
+        <video id="combinedVideo" autoplay playsinline style="display: none;"></video>
+      <!-- <h1>Analytics Demo</h1>
+      <p><button id="myButton">Click to fire event</button></p> -->
+  </body>
+</html>
