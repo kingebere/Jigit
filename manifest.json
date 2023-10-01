@@ -1,24 +1,28 @@
 {
-	"name": "Jigit",
-	"description": "Create beautiful recordings in one click",
-	"version": "0.0.0.1",
-	"manifest_version": 3,
-	"icons": {
-		"16": "logo/logo.png",
-		"48": "logo/logo.png",
-		"128": "logo/logo.png"
-	},
-	"background": {
-		"service_worker": "background.js",
-		"type": "module"
-	},
-	"action": {
-		"default_title": "Instant Apply"
+  "name": "Tab Capture - Recorder",
+  "description": "Records the current tab in an offscreen document.",
+  "version": "1",
+  "manifest_version": 3,
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_icon": "icons/not-recording.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": ["tabs","tabCapture", "offscreen","desktopCapture", "activeTab", "background","scripting"],
+  "content_scripts": [
+		
 	
-	},
-
-	"permissions": ["storage", "tabs","desktopCapture", "activeTab", "background","scripting"  ],
- "web_accessible_resources": [
+		
+		{
+			"matches": ["https://*.lever.co/*/apply"],
+			"js": ["lever.js"]
+		}
+		
+	
+	],
+  "web_accessible_resources": [
     {
       "resources": ["iframe.html"],
       "matches": ["<all_urls>"]
